@@ -1,7 +1,7 @@
 const perf = require('execution-time')();
 
 
-function doublerAppend(nums){
+function doublerAppend(nums){ // O(n)
 
     let new_nums = [];
 
@@ -13,7 +13,7 @@ function doublerAppend(nums){
 }
 
 
-function doublerInsert(nums){
+function doublerInsert(nums){ // O(n^2)
     
     let new_nums = [];
     
@@ -83,17 +83,17 @@ console.log("firstFunction", resultsAppend.preciseWords);
 3.  PATTERN ANALYSIS:
     The doublerAppend function increases by about a single ms 
     for every 0 added to the GetSizedArray() function. The scaling factor is very 
-    small and time needed to complete this function is O(1) - due to the 
+    small and time needed to complete this function is O(n) - due to the 
     function only adding the new array to the end of the existing array.
 
     The doublerInsert function increases much more drastically.
     Initially running very quickly for small array sizes. However, once the 
     array sizes increase the time also increases due to the function needing to move every 
     item in the array to the right one index position. This shift of the array over and over 
-    causes teh time complexity of this function to be O(n).
+    causes the time complexity of this function to be O(n^2).
 
 4.  The doublerAppend function scales much better than the doublerInsert function. The doublerAppend
-    time complexity of O(1) is better than doublerInsert's time complexity of O(n). 
+    time complexity of O(n) is better than doublerInsert's time complexity of O(n^2). 
 
 5.  The doublerInsert function is so slow as its size grows larger because for every value that
     is getting inserted to the beginning of the array, the function pushes all existing values
