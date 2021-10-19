@@ -1,18 +1,22 @@
 function uniqueChar (word) {
-    word.split('');
-    for (let i = 0; i < word.length; i++) {
-        if (word.indexOf(word[i]) === word.lastIndexOf(word[i]) ) {
-        console.log('true')
-        } else {
-            console.log('false')
-            return  false;
+    let wordArr = word.split('');
+    
+    for (let i = 0; i < wordArr.length; i++) {
+      console.log(wordArr[i])
+        for (let j = i + 1; j < wordArr.length; j++){
+         console.log(wordArr[j])
+          if (wordArr[i] === wordArr[j]) {
+              return false;
+              console.log(hit)
+          } 
         }
-    }
+    } 
+        return true;
 }
 
-console.time('uniqueChar')
-uniqueChar('worrd')
-console.timeEnd('uniqueChar')
+// console.time('uniqueChar')
+uniqueChar('word')
+// console.timeEnd('uniqueChar')
 
 //RUNTIME = 5.5ms
 
